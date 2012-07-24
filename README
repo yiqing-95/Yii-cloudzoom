@@ -1,0 +1,107 @@
+usage example , in your view file:
+**note:**
+you can put this extension in any common dir (normally it 's extensions), but refer it using the correct path alias , i just use my own dir 'common.widgets.cloudzoom.CloudZoom' , so change it according to your circumstance
+
+~~~
+[php]
+<?php
+/**
+  * User: yiqing
+ * Date: 11-12-3
+ * Time: 下午4:07
+  */
+
+$this->widget(
+    'common.widgets.cloudzoom.CloudZoom',
+    array()
+);
+?>
+
+<div>
+
+    <h4>
+        the below is the default structure for using this plugin
+    </h4>
+
+    <p>
+    <h5>note:</h5>
+    you can overwrite the default CloudZoom setting be modify the "rel" attribute of the big image's wrapper tag "a"
+    the available setting please read the doc (<a
+    href="http://www.professorcloud.com/mainsite/cloud-zoom-integration.htm">CloudZoomDoc</a> )
+    or read the source file ;
+
+    <pre>
+    $.fn.CloudZoom.defaults = {
+        zoomWidth: 'auto',
+        zoomHeight: 'auto',
+        position: 'right',
+        tint: false,
+        tintOpacity: 0.5,
+        lensOpacity: 0.5,
+        softFocus: false,
+        smoothMove: 3,
+        showTitle: true,
+        titleOpacity: 0.5,
+        adjustX: 0,
+        adjustY: 0
+    };
+    </pre>
+    </p>
+    <!--
+    An anchor with class of 'cloud-zoom' should surround the small image.
+    The anchor's href should point to the big zoom image.
+    Any options can be specified in the rel attribute of the anchor.
+    Options should be specified in regular JavaScript object format,
+    but without the braces.
+    -->
+
+    <a href='http://www.professorcloud.com/images/zoomengine/bigimage00.jpg' class='cloud-zoom' id='zoom1'
+       rel="adjustX: 10, adjustY:-4, softFocus:true , zoomWidth:700 , position:'right'">
+        <img src="http://www.professorcloud.com/images/zoomengine/smallimage.jpg" alt='' align="left"
+             title="Optional title display"/>
+    </a>
+
+    <div>
+        <p>and here is some text</p>
+
+        <!--
+        You can optionally create a gallery by creating anchors with a class of 'cloud-zoom-gallery'.
+        The anchor's href should point to the big zoom image.
+        In the rel attribute you must specify the id of the zoom to use (useZoom: 'zoom1'),
+        and also the small image to use (smallImage: /images/....)
+        -->
+
+        <a href='http://www.professorcloud.com/images/zoomengine/bigimage00.jpg' class='cloud-zoom-gallery'
+           title='Thumbnail 1'
+           rel="useZoom: 'zoom1', smallImage: 'http://www.professorcloud.com/images/zoomengine/smallimage.jpg' ">
+            <img src="http://www.professorcloud.com/images/zoomengine/tinyimage.jpg" alt="Thumbnail 1"/>
+        </a>
+
+        <a href='http://www.professorcloud.com/images/zoomengine/bigimage01.jpg' class='cloud-zoom-gallery'
+           title='Thumbnail 2'
+           rel="useZoom: 'zoom1', smallImage: ' http://www.professorcloud.com/images/zoomengine/smallimage-1.jpg'">
+            <img src="http://www.professorcloud.com/images/zoomengine/tinyimage-1.jpg" alt="Thumbnail 2"/>
+        </a>
+
+        <a href='http://www.professorcloud.com/images/zoomengine/bigimage02.jpg' class='cloud-zoom-gallery'
+           title='Thumbnail 3'
+           rel="useZoom: 'zoom1', smallImage: 'http://www.professorcloud.com/images/zoomengine/smallimage-2.jpg' ">
+            <img src="http://www.professorcloud.com/images/zoomengine/tinyimage-2.jpg" alt="Thumbnail 3"/>
+        </a>
+
+        <a href='http://www.professorcloud.com/images/zoomengine/bigimage03.jpg' class='cloud-zoom-gallery'
+           title='Thumbnail 1'
+           rel="useZoom: 'zoom1', smallImage: 'http://www.professorcloud.com/images/zoomengine/smallimage-3.jpg' ">
+            <img src="http://www.professorcloud.com/images/zoomengine/tinyimage-3.jpg" alt="Thumbnail 1"/>
+        </a>
+
+        <a href='http://www.professorcloud.com/images/zoomengine/bigimage04.jpg' class='cloud-zoom-gallery'
+           title='Thumbnail 2'
+           rel="useZoom: 'zoom1', smallImage: ' http://www.professorcloud.com/images/zoomengine/smallimage-4.jpg'">
+            <img src="http://www.professorcloud.com/images/zoomengine/tinyimage-4.jpg" alt="Thumbnail 2"/>
+        </a>
+
+    </div>
+
+</div>
+~~~
