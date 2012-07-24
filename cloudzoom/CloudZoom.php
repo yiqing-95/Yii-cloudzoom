@@ -90,8 +90,7 @@ class CloudZoom extends CWidget
         if ($this->debug) {
             $this->registerScriptFile('cloud-zoom.1.0.2.js', CClientScript::POS_HEAD);
         } else {
-            // no the min file now !
-            $this->registerScriptFile('cloud-zoom.1.0.2.min', CClientScript::POS_HEAD);
+            $this->registerScriptFile('cloud-zoom.1.0.2.min.js', CClientScript::POS_HEAD);
         }
         $this->registerCssFile('cloud-zoom.css');
 
